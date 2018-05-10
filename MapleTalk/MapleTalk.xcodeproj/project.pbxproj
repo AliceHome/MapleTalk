@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD99C6C97517594A936754D3 /* libPods-MapleTalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 986652F357292B4E300D87DF /* libPods-MapleTalk.a */; };
 		F58F285620A3FC1E0051DDFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F58F285520A3FC1E0051DDFD /* AppDelegate.m */; };
 		F58F285920A3FC1E0051DDFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58F285820A3FC1E0051DDFD /* ViewController.m */; };
 		F58F285C20A3FC1E0051DDFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58F285A20A3FC1E0051DDFD /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F54C899C96A05F33A6D8E20 /* Pods-MapleTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleTalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapleTalk/Pods-MapleTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		986652F357292B4E300D87DF /* libPods-MapleTalk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapleTalk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0DEA6184B7DC27CB279F4AE /* Pods-MapleTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapleTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapleTalk/Pods-MapleTalk.release.xcconfig"; sourceTree = "<group>"; };
 		F58F285120A3FC1E0051DDFD /* MapleTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapleTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58F285420A3FC1E0051DDFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F58F285520A3FC1E0051DDFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD99C6C97517594A936754D3 /* libPods-MapleTalk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF36B40313EFD019882A329C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F54C899C96A05F33A6D8E20 /* Pods-MapleTalk.debug.xcconfig */,
+				A0DEA6184B7DC27CB279F4AE /* Pods-MapleTalk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C63AE02F5C6376687565EED0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				986652F357292B4E300D87DF /* libPods-MapleTalk.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F58F284820A3FC1E0051DDFD = {
 			isa = PBXGroup;
 			children = (
 				F58F285320A3FC1E0051DDFD /* MapleTalk */,
 				F58F285220A3FC1E0051DDFD /* Products */,
+				BF36B40313EFD019882A329C /* Pods */,
+				C63AE02F5C6376687565EED0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F58F286720A3FC1E0051DDFD /* Build configuration list for PBXNativeTarget "MapleTalk" */;
 			buildPhases = (
+				0155C18E6F45224C7E2342A6 /* [CP] Check Pods Manifest.lock */,
 				F58F284D20A3FC1E0051DDFD /* Sources */,
 				F58F284E20A3FC1E0051DDFD /* Frameworks */,
 				F58F284F20A3FC1E0051DDFD /* Resources */,
+				C0CD8A41590770D6E4BBF770 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +162,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0155C18E6F45224C7E2342A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapleTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0CD8A41590770D6E4BBF770 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MapleTalk/Pods-MapleTalk-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapleTalk/Pods-MapleTalk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F58F284D20A3FC1E0051DDFD /* Sources */ = {
@@ -276,6 +349,7 @@
 		};
 		F58F286820A3FC1E0051DDFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F54C899C96A05F33A6D8E20 /* Pods-MapleTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,6 +363,7 @@
 		};
 		F58F286920A3FC1E0051DDFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0DEA6184B7DC27CB279F4AE /* Pods-MapleTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
